@@ -7,7 +7,7 @@ addpath(genpath(pwd));
 % CHECK PRODUCTS
 productinfo = ver;
 productname = {productinfo.Name};
-ReqProductList = {'MATLAB','Simulink','Simscape','SimDriveline','SimElectronics','SimHydraulics','SimMechanics','SimPowerSystems','Simulink Design Optimization','Stateflow','Optimization Toolbox'};
+ReqProductList = {'MATLAB','Simulink','Simscape','Simscape Driveline','Simscape Electronics','Simscape Fluids','Simscape Multibody','Simscape Power Systems','Simulink Design Optimization','Stateflow','Optimization Toolbox'};
 
 for i = 1:length(ReqProductList)
     haveprod(i) = sum(strcmp(char(ReqProductList(i)),productname)');
@@ -24,18 +24,5 @@ else
         end
     end
 end
-
-% BUILD CUSTOM LIBRARY
-if (exist('Exercise_07a')==7)
-    cd Exercise_07a
-    ssc_build CustomSprings
-    if (exist('Exercise_07a_Solution')==7)
-        cd Exercise_07a_Solution
-        ssc_build CustomSprings
-        cd ..
-    end
-    cd ..
-end
-
 
 

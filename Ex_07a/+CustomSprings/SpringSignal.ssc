@@ -1,0 +1,39 @@
+component SpringSignal
+% Spring (Signal)
+% The block represents a mechanical spring.
+%
+% Connections R and C are mechanical translational conserving ports. 
+% The block positive direction is from port R to port C. This means that
+% the force is positive if it acts in the direction from R to C.
+
+% Copyright 2005-2016 The MathWorks, Inc.
+
+  inputs
+    k = { 0, 'N/m' }; % k:left
+  end
+  outputs
+    p = { 0, 'm' }; % p:right
+  end
+
+  nodes
+    r = foundation.mechanical.translational.translational; % r:right
+    c = foundation.mechanical.translational.translational; % c:left
+  end
+  
+  variables 
+    v = { 0, 'm/s' }; % Velocity
+    f = { 0, 'N'   }; % Force
+    x = { 0, 'm'   }; % Deformation
+  end
+  
+  branches
+    f : r.f -> c.f; % Through variable f from node r to node c
+  end
+
+  equations
+    v == r.v - c.v; % Across variable v from r to c
+    f == k*x;       % Spring Equation
+    v == x.der;     % 
+    p == x;
+  end
+end
