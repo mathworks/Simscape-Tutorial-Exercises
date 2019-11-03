@@ -1,6 +1,6 @@
 README file for Simscape Hands-On Exercises
 Steve Miller
-Copyright 2011-2017 The MathWorks, Inc.
+Copyright 2011-2018 The MathWorks, Inc.
 
 These models can be used as tutorial exercises.  
 In the Solution directory for each example, you can find the final model and 
