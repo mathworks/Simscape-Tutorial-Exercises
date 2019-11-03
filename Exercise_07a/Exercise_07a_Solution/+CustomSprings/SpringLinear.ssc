@@ -1,0 +1,41 @@
+component SpringLinear
+% Translational Spring
+% The block represents an ideal mechanical linear spring.
+%
+% Connections R and C are mechanical translational conserving ports. 
+% The block positive direction is from port R to port C. This means that
+% the force is positive if it acts in the direction from R to C.
+
+% Copyright 2005-2014 The MathWorks, Inc.
+
+  nodes
+    r = foundation.mechanical.translational.translational; % r:right
+    c = foundation.mechanical.translational.translational; % c:left
+  end
+  
+  parameters
+    k = { 1, 'N/m' }; % Spring Constant
+  end
+  
+  variables
+    v = { 0, 'm/s' }; % Velocity
+    f = { 0, 'N'   }; % Force
+    x = { 0, 'm'   }; % Deformation
+  end
+  
+  function setup
+    if k <= { 0, 'N/m'}
+        pm_error('simscape:GreaterThanZero','Spring rate' )
+    end
+  end
+
+  branches
+    f : r.f -> c.f; % Through variable f from node r to node c
+  end
+
+  equations
+    v == r.v - c.v; % Across variable v from r to c
+    f == k*x;       % Spring Equation
+    v == x.der;     % 
+  end
+end

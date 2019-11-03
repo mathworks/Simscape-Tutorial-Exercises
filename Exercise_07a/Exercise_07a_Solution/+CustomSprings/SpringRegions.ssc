@@ -1,0 +1,46 @@
+component SpringRegions
+% Translational Spring (Regions)
+% The block represents an mechanical linear spring
+% where the force generated varies linearly in one region of deflection
+% and based on a polynomial in a separate region of deflection
+%
+% Connections R and C are mechanical translational conserving ports. 
+% The block positive direction is from port R to port C. This means that
+% the force is positive if it acts in the direction from R to C.
+
+% Copyright 2005-2014 The MathWorks, Inc.
+
+  nodes
+    r = foundation.mechanical.translational.translational; % r:right
+    c = foundation.mechanical.translational.translational; % c:left
+  end
+  parameters
+    k = { 1, 'N/m' };   % Spring Constant (linear region)
+    k1 = { 1, 'N/m^3' }; % Spring Constant (non-linear region)
+    xc = {0.2, 'm'}; % Critical displacement
+  end
+  variables
+    v = { 0, 'm/s' }; % Velocity
+    f = { 0, 'N'   }; % Force
+    x = { 0, 'm'   }; % Deformation
+  end
+  function setup
+    if k <= { 0, 'N/m'}
+        error( 'Spring Constant must be greater than zero' )
+    end
+  end
+
+  branches
+    f : r.f -> c.f; % Through variable f from node r to node c
+  end
+
+  equations
+    v == r.v - c.v; % Across variable v from r to c
+    if abs(x) < xc
+        f == k*x;      % Linear region
+    else 
+        f == k*xc*sign(x) + k1*sign(x)*(abs(x)-xc)^3;    % Non-linear region
+    end
+    v == x.der;  % 
+  end
+end
