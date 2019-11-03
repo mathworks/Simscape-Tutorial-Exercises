@@ -1,10 +1,20 @@
 function startup_workshop
-% Copyright 2014 The MathWorks, Inc.
+% Copyright 2014-2016 The MathWorks, Inc.
 
-% SETUP PATH
+% Setup path
 addpath(genpath(pwd));
 
-% CHECK PRODUCTS
+% If exercise 2d is present, run startup file
+[pathstr,~,~] = fileparts(which('startup_Contact_Forces.m'));
+if ~isempty(pathstr)
+    currdir = pwd;
+    cd(pathstr);
+    startup_Contact_Forces
+    cd(currdir);
+end
+
+
+% Check if correct products are installed
 productinfo = ver;
 productname = {productinfo.Name};
 ReqProductList = {'MATLAB','Simulink','Simscape','Simscape Driveline','Simscape Electronics','Simscape Fluids','Simscape Multibody','Simscape Power Systems','Simulink Design Optimization','Stateflow','Optimization Toolbox'};
