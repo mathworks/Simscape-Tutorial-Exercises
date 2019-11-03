@@ -1,5 +1,5 @@
 function startup_workshop
-% Copyright 2014-2016 The MathWorks, Inc.
+% Copyright 2014-2017 The MathWorks, Inc.
 
 % Setup path
 addpath(genpath(pwd));
