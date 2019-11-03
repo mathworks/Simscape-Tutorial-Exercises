@@ -19,6 +19,7 @@
 % <tr>1.  Two-Wheel Robot: <a href="matlab:cd([CFR_HomeDir filesep 'Examples' filesep '3D' filesep 'Robot_2_Whl']);Robot_2_Whl;">Model</a>, <a href="matlab:CheckAnim('Robot_2_Whl_Anim.html');">Animation</a><br>
 % <tr>2.  Gripper with Conveyor Belts: <a href="matlab:cd([CFR_HomeDir filesep 'Examples' filesep '3D' filesep 'Gripper_2Belts']);Gripper_2Belts;">Model</a>, <a href="matlab:CheckAnim('Gripper_2Belts_Anim.html');">Animation</a><br>
 % <tr>3.  Tread Drive on Uneven Surface: <a href="matlab:cd([CFR_HomeDir filesep 'Examples' filesep '3D' filesep 'Tread_Drive']);sm_tread_drive;">Model</a>, <a href="matlab:CheckAnim('sm_tread_drive_Anim.html');">Animation</a><br>
+% <tr>4.  Robot with Six Legs Built from 4 Four-Bar Linkages: <a href="matlab:cd([CFR_HomeDir filesep 'Examples' filesep '3D' filesep 'Robot_6Legs_4Bar']);startup_sm_robot_6legs_4bar;">Model</a>, <a href="matlab:CheckAnim('sm_robot_6legs_4bar_Anim.html');">Animation</a><br>
 % </style>
 % </style>
 % </html>

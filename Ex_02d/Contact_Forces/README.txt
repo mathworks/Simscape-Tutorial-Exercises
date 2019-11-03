@@ -37,6 +37,33 @@ Recommendations:
 
 
 #########  Release History  #########  
+v 4.1(R2018b)   Sep 2018       Updated v4.1 for R2018b
+                               All v4p1 have updated Extr_Data_Cam_Roller_Curve.m
+
+     (R2018a)   Mar 2018       Tread example, walking robot example 
+     (R2017b)
+     (R2017a)   1. Adjusted Sphere to Belt Force (in 3D, Composite Forces)
+     (R2016b)      Changed orientation of reference frame for the two
+     (R2016a)      Sphere to Tube Enabled Forces. Z-axis flipped 180 deg
+     (R2015b)      so that vx and wz inputs have the same sign. 
+     (R2015a)   
+                2. Adjusted sm_tread_drive example.slx
+                   Uses adjusted Sphere to Belt Force, test sequence altered
+                   to show turning and show both treads striking bump in 
+                   forward and reverse. 
+
+                3. New example sm_robot_6legs_4bar.slx 
+                   Models 6-legged robot. Legs on each side are a pair of
+                   connected four-bar linkages. Shows how to model robot
+                   walking on uneven surface.   
+
+                4. Added CFL_contact_setModel.m
+                   Function to select force law in all contact forces in model.
+
+                5. Additions to support Parts_Lib.slx 
+                   Extrusion file Extr_Data_TriangleRounded_Holes.m and 
+                   various images for masking parts.
+
 v 4.0(R2018a)	Mar 2018       Updated for R2018a
      (R2017b)
      (R2017a)   1. Added Sphere to Tube Enabled Force
