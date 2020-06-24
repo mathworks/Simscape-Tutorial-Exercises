@@ -6,7 +6,7 @@ component SpringLUT
 % The block positive direction is from port R to port C. This means that
 % the force is positive if it acts in the direction from R to C.
 
-% Copyright 2005-2019 The MathWorks, Inc.
+% Copyright 2005-2020 The MathWorks, Inc.
 
   nodes
     r = foundation.mechanical.translational.translational; % r:right

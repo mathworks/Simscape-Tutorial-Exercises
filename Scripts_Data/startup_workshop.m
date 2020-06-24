@@ -1,5 +1,5 @@
 function startup_workshop
-% Copyright 2014-2019 The MathWorks, Inc.
+% Copyright 2014-2020 The MathWorks, Inc.
 
 % Check if correct products are installed
 productinfo = ver;
