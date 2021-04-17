@@ -1,4 +1,4 @@
-% Copyright 2011-2020 The MathWorks, Inc.
+% Copyright 2011-2021 The MathWorks, Inc.
 
 DC_Motor_R = 0.5; 
 DC_Motor_L = 1e-06;
