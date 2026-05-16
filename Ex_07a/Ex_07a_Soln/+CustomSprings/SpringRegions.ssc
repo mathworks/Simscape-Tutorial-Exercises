@@ -6,7 +6,7 @@ component SpringRegions
 % The block positive direction is from port R to port C. This means that
 % the force is positive if it acts in the direction from R to C.
 
-% Copyright 2005-2025 The MathWorks, Inc.
+% Copyright 2005-2026 The MathWorks, Inc.
 
   nodes
     r = foundation.mechanical.translational.translational; % r:right
@@ -25,17 +25,12 @@ component SpringRegions
     x = { 0, 'm'   }; % Deformation
   end
   
-  function setup
-    if k <= { 0, 'N/m'}
-        pm_error('simscape:GreaterThanZero','Spring rate' )
-    end
-  end
-
   branches
     f : r.f -> c.f; % Through variable f from node r to node c
   end
 
   equations
+    assert(k > { 0, 'N/m'})
     v == r.v - c.v; % Across variable v from r to c
     if lt(abs(x),xc)
       f==k*x;
